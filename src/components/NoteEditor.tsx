@@ -33,7 +33,7 @@ export const NoteEditor = ({
           extensions={[
             markdown({ base: markdownLanguage, codeLanguages: languages }),
           ]}
-          onChange={(value: any) => setCode(value)}
+          onChange={(value: string) => setCode(value)}
           className="border border-gray-300"
         />
       </div>
