@@ -25,6 +25,7 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+type Note = RouterOutputs["note"]["getAll"][0];
 
 type Topic = RouterOutputs["topic"]["getAll"][0];
 
@@ -74,7 +75,7 @@ const Content: React.FC = () => {
     <div className="mx-5 mt-5 grid grid-cols-4 gap-2">
       <div className="px-2">
         <ul className="menu w-56 rounded-box bg-base-100 p-2">
-          {topics?.map((topic) => (
+          {topics?.map((topic: Topic) => (
             <li key={topic.id}>
               <a
                 href="#"
@@ -105,7 +106,7 @@ const Content: React.FC = () => {
       </div>
       <div className="col-span-3">
         <div>
-          {notes?.map((note) => (
+          {notes?.map((note: Note) => (
             <div key={note.id} className="mt-5">
               <NoteCard
                 note={note}
